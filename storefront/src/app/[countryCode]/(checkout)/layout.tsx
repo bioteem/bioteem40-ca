@@ -2,6 +2,15 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import ChevronDown from "@modules/common/icons/chevron-down"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
+// makes all fetch() in this subtree default to no-store
+export const fetchCache = "default-no-store"
+
+// belt-and-suspenders: no ISR; always fresh
+export const revalidate = 0
+
+// optional: if anything still sneaks through static
+// export const dynamic = "force-dynamic"
+
 export default function CheckoutLayout({
   children,
 }: {
